@@ -40,7 +40,9 @@
             echo "O ID do Usario $id <br>";
             echo "O NOME do Usario $name <br>";
             echo "O EMAIL do Usario $email <br>";
-            echo "<a href='view.php?id=$id'>Vizualizar</a>";
+            echo "<a href='view.php?id=$id'>Vizualizar</a><br>";
+            echo "<a href='edit.php?id=$id'>Editar</a><br>";
+            echo "<a href='delete.php?id=$id'>Delete</a>";
             echo "<hr>";
         }
 

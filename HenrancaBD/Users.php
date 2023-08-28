@@ -54,5 +54,32 @@
              return $value;
 
         }
+        public function edit(){
+            $this->conn = $this->connectDb();
+            $query_user = "UPDATE users SET name = :name, email = :email, modified = NOW()  
+                    WHERE id = :id";
+            $edit_user = $this->conn->prepare($query_user);
+            $edit_user->bindParam(':name', $this->formData['name']);
+            $edit_user->bindParam(':email', $this->formData['email']);
+            $edit_user->bindParam(':id', $this->formData['id']);
+            $edit_user->execute();
+            
+            if($edit_user->rowCount()){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        public function delete():bool{
+            $this->conn = $this->connectDb();
+            $query_del_user = "DELETE FROM users WHERE id=:id LIMIT 1";
+            $del_user = $this->conn->prepare($query_del_user);
+            $del_user->bindParam(':id', $this->id);
+            $value = $del_user->execute();
+
+            return $value;
+
+        }
     }
 ?>
