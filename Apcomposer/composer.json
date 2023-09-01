@@ -1,0 +1,16 @@
+{
+    "description": "Pojetos PHP OO",
+    "authors": [
+        {
+        "name": "Luiz",
+        "email":"luizrodriguescode@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sts\\":"app/sts",
+            "Core\\":"core"
+        }
+    },
+    "require": {}
+}
